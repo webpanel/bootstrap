@@ -1,0 +1,20 @@
+{
+  "User": {
+    "_title": "Uživatel",
+    "_title_2": "Uživatelé",
+    "firstName": "Jméno",
+    "lastName": "Příjmení"
+  },
+  "Task": {
+    "_title": "Úkol",
+    "_title_2": "Úkoly",
+    "title": "Název",
+    "completed": "Dokončen",
+    "dueDate": "Datum dokončení",
+    "assignee": "Zodp. osoba"
+  },
+  "common": {
+    "new": "Nový",
+    "edit": "Editace"
+  }
+}

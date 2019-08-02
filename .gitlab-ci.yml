@@ -1,0 +1,41 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: novacloud/devops
+  stage: build
+  tags:
+    - docker
+  services:
+    - docker:18.09-dind
+  script:
+    - devops gitlab docker build --specific-tag --push-latest
+  only:
+    - develop
+# deploy:
+#   image: registry.gitlab.com/novacloud/ci/kubectl:latest
+#   stage: deploy
+#   tags:
+#     - docker
+#   script:
+#     - hash=`echo $CI_COMMIT_SHA |cut -c1-8`
+#     - echo $hash
+#     - kubectl set image deployment/rdk-dev-admin app=${CI_REGISTRY_IMAGE}:${hash} -n rdk-cms
+#     - kubectl rollout status deployment/rdk-dev-admin -n rdk-cms
+#   only:
+#     - develop
+
+# deploy to production:
+#   image: registry.gitlab.com/novacloud/ci/kubectl:latest
+#   stage: deploy
+#   tags:
+#     - docker
+#   script:
+#     - NAMESPACE=rdk-cms
+#     - image=`kubectl get deployment rdk-dev-admin -o=jsonpath='{$.spec.template.spec.containers[0].image}' -n $NAMESPACE`
+#     - echo $image
+#     - kubectl set image deployment/rdk-admin app=${image} -n $NAMESPACE
+#     - kubectl rollout status deployment/rdk-admin -n $NAMESPACE
+#   only:
+#     - master
