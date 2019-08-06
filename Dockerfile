@@ -1,6 +1,6 @@
 FROM node:8.4.0 as builder
 COPY . /code
-RUN cd /code && yarn && yarn build
+RUN cd /code && npm i && npm run build
 
 
 FROM inloopx/cra-docker
