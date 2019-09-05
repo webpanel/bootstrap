@@ -40,6 +40,7 @@
     "webpanel-antd": "git+https://github.com/webpanel/antd.git#develop",
     "webpanel-auth": "https://github.com/webpanel/auth.git#develop",
     "webpanel-data": "^0.0.43",
+    "webpanel-i18n": "git+https://github.com/webpanel/i18n.git#master",
     "webpanel-notifications": "https://github.com/webpanel/notifications.git#develop"
   },
   "scripts": {
