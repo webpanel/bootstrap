@@ -1,12 +1,14 @@
 import './env';
 import './index.css';
-import './i18n';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { i18nInitialize } from 'webpanel-i18n';
 
 import { App } from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+i18nInitialize();
 
 const Loader = () => <div>loading...</div>;
 
